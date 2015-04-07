@@ -27,3 +27,5 @@
     (org-babel-load-file (expand-file-name "starter-kit.org" starter-kit-dir))))
 
 ;;; init.el ends here
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
