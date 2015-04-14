@@ -1,0 +1,27 @@
+#+TITLE: my w3m configuration
+#+STARTUP: indent
+#+OPTIONS: ^:nil
+
+* require
+#+name: common-w3m
+#+BEGIN_SRC emacs-lisp
+(starter-kit-install-if-needed 'w3m) ;; install when not installed
+(require 'w3m)
+(require 'w3m-lnum)
+(require 'w3m-search)
+#+END_SRC
+* set
+#+name: set-w3m
+#+BEGIN_SRC emacs-lisp
+(setq w3m-home-page "http://www.google.com.hk")
+#+END_SRC
+* search engines
+#+name: search-w3m
+#+BEGIN_SRC emacs-lisp
+(eval-after-load "w3m-search"
+'(progn
+(add-to-list 'w3m-search-engine-alist
+'("baidu" "http://www.baidu.com/s?wd=%s" nil))
+(add-to-list 'w3m-uri-replace-alist
+'("\\`bd:" w3m-search-uri-replace "baidu"))))
+#+END_SRC

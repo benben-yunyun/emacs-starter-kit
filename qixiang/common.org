@@ -1,0 +1,32 @@
+#+TITLE: emacs plugin
+#+STARTUP: indent
+#+OPTIONS: ^:nil
+
+* yasnippet
+
+#+name: yasnippet
+#+begin_src emacs-lisp
+(starter-kit-load "starter-kit-yasnippet.org")
+#+end_src
+
+* color-theme
+
+#+name: color-theme
+#+begin_src emacs-lisp
+(setq molokai-theme-kit t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'molokai t) ;; 确保不会一直提问你是否加载该主题
+#+end_src 
+
+* linum
+打开全局的linum-mode
+#+name: linum
+#+begin_src emacs-lisp
+(global-linum-mode t)
+#+end_src
+* menu bar
+关闭menu bar。
+#+name: menu bar
+#+BEGIN_SRC emacs-lisp
+(menu-bar-mode 0)
+#+END_SRC
