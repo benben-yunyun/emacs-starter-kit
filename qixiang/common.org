@@ -16,7 +16,7 @@
 (setq molokai-theme-kit t)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'molokai t) ;; 确保不会一直提问你是否加载该主题
-#+end_src 
+#+end_src
 
 * linum
 打开全局的linum-mode
@@ -29,4 +29,22 @@
 #+name: menu bar
 #+BEGIN_SRC emacs-lisp
 (menu-bar-mode 0)
+#+END_SRC
+* scrolling
+set the auto scrolling a samll that does not lose the point in the
+buffer
+#+name: scrolling
+#+BEGIN_SRC emacs-lisp
+(setq scroll-conservatively 100)
+(setq scroll-margin 3)
+#+END_SRC
+* python
+#+name: python
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "python")
+#+END_SRC
+* hl-line-mode
+#+name: global-hl-line-mode
+#+BEGIN_SRC emacs-lisp
+(global-hl-line-mode t)
 #+END_SRC
