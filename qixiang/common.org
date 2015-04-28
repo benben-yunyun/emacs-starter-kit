@@ -22,7 +22,8 @@
 打开全局的linum-mode
 #+name: linum
 #+begin_src emacs-lisp
-(global-linum-mode t)
+;;(global-linum-mode t)
+;;(add-hook 'org-mode-hook '(linum-mode -1))
 #+end_src
 * menu bar
 关闭menu bar。
@@ -43,8 +44,30 @@ buffer
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "python")
 #+END_SRC
+* highlight-indentation
+#+name: highlight-indentation
+#+BEGIN_SRC emacs-lisp
+(require 'highlight-indentation)
+(add-hook 'python-mode-hook 'highlight-indentation-mode)
+(add-hook 'python-mode-hook 'highlight-indentation-current-column-mode)
+(set-face-background 'highlight-indentation-face "#00ff00")
+(set-face-background 'highlight-indentation-current-column-face "#00ff7f")
+#+END_SRC
+* js
+#+name: javascript
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "js")
+#+END_SRC
 * hl-line-mode
 #+name: global-hl-line-mode
 #+BEGIN_SRC emacs-lisp
 (global-hl-line-mode t)
 #+END_SRC
+* php
+#+name:php
+#+BEGIN_SRC emacs-lisp
+(require 'php-mode)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+#+END_SRC
+
